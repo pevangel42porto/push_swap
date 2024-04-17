@@ -6,7 +6,7 @@
 #    By: pevangel <pevangel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/24 12:08:34 by pevangel          #+#    #+#              #
-#    Updated: 2024/04/15 16:42:37 by pevangel         ###   ########.fr        #
+#    Updated: 2024/04/16 14:15:30 by pevangel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,10 +30,12 @@ SOURCES_BONUS = $(SRC_FILES_BONUS)
 OBJECTS = $(SOURCES:.c=.o)
 OBJECTSBONUS = $(SOURCES_BONUS:.c=.o)
 
-NAME = push_swap
+NAME =	push_swap\
+		init.c\
+		functions.c
+		
 NAMEBONUS = push_swap_bonus\
-			init.c\
-			functions.c
+			
 CC = cc
 RM = rm -f
 

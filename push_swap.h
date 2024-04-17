@@ -6,7 +6,7 @@
 /*   By: pevangel <pevangel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 16:30:27 by pevangel          #+#    #+#             */
-/*   Updated: 2024/04/15 16:45:35 by pevangel         ###   ########.fr       */
+/*   Updated: 2024/04/17 15:15:27 by pevangel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,17 @@
 # include "lib/libft/libft.h"
 # include "lib/libft/ft_printf/ft_printf.h"
 
+# ifndef MAX_SIZE
+#  define MAX_SIZE 100
+# endif
+
 typedef struct s_dual_stack
 {
 	int	*stack_a;
 	int	*stack_b;
+	int	size;
 	int	a_top;
 	int	b_top;
-	int	size;
 }	t_dual_stack;
 
 void	init(t_dual_stack *stack);
