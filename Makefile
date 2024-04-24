@@ -6,7 +6,7 @@
 #    By: pevangel <pevangel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/24 12:08:34 by pevangel          #+#    #+#              #
-#    Updated: 2024/04/16 14:15:30 by pevangel         ###   ########.fr        #
+#    Updated: 2024/04/24 17:42:11 by pevangel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,9 +19,15 @@ HEADERBONUS = bonus/push_swap_bonus.h
 CFLAGS = -Wall -Wextra -Werror -g
 
 SRC_FILES = push_swap.c\
+		checker_1.c\
+		init.c\
+		functions.c\
+		operations.c\
+		print_stacks.c
+		
 
 			
-SRC_FILES_BONUS = bonus/push_swap_bonus.c\
+SRC_FILES_BONUS = bonus/push_swap_bonus.c
 		
 
 SOURCES = $(SRC_FILES)
@@ -30,11 +36,8 @@ SOURCES_BONUS = $(SRC_FILES_BONUS)
 OBJECTS = $(SOURCES:.c=.o)
 OBJECTSBONUS = $(SOURCES_BONUS:.c=.o)
 
-NAME =	push_swap\
-		init.c\
-		functions.c
-		
-NAMEBONUS = push_swap_bonus\
+NAME =	push_swap
+NAMEBONUS = push_swap_bonus
 			
 CC = cc
 RM = rm -f

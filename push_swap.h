@@ -6,7 +6,7 @@
 /*   By: pevangel <pevangel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 16:30:27 by pevangel          #+#    #+#             */
-/*   Updated: 2024/04/17 15:15:27 by pevangel         ###   ########.fr       */
+/*   Updated: 2024/04/24 17:46:15 by pevangel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,11 @@ typedef struct s_dual_stack
 	int	size;
 	int	a_top;
 	int	b_top;
+	int	max;
+	int	min;
 }	t_dual_stack;
 
+void	is_valid_argument(char *str);
 void	init(t_dual_stack *stack);
 void sa(t_dual_stack *stack);
 void sb(t_dual_stack *stack);
@@ -42,5 +45,9 @@ void rb(t_dual_stack *stack);
 void rra(t_dual_stack *stack);
 void rrb(t_dual_stack *stack);
 void rrr(t_dual_stack *stack);
+void init(t_dual_stack *stack);
 
+void	ordenate(t_dual_stack *stack);
+void	print_stack_a(t_dual_stack *stack);
+void	print_stack_b(t_dual_stack *stack);
 #endif
