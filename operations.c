@@ -6,7 +6,7 @@
 /*   By: pevaangel <pevaangel@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 14:25:09 by pevangel          #+#    #+#             */
-/*   Updated: 2024/04/26 00:07:29 by pevaangel        ###   ########.fr       */
+/*   Updated: 2024/04/26 00:32:18 by pevaangel        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ static void	operations(t_dual_stack *stack)
 			print_stack_b(stack);
 		}
 		ft_printf("numero de poisicoes da stack_a: %d\n" ,stack->a_top);
-		if (stack->a_top >= 1)
+		if  (!(is_all_ordenate(stack)))
 			operations(stack);		
 		while(stack->b_top != -1)
 		{
