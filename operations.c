@@ -56,9 +56,6 @@ static int is_all_ordenate(t_dual_stack *stack)
 }
 static void	operations(t_dual_stack *stack)
 {
-	int i;
-	
-	i = 0;
 	if (!(is_all_ordenate(stack)))
 	{
 		if (stack->stack_a[stack->a_top] == stack->max)

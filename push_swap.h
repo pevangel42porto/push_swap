@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pevangel <pevangel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pevaangel <pevaangel@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 16:30:27 by pevangel          #+#    #+#             */
-/*   Updated: 2024/04/24 17:46:15 by pevangel         ###   ########.fr       */
+/*   Updated: 2024/04/25 16:07:52 by pevaangel        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ typedef struct s_dual_stack
 }	t_dual_stack;
 
 void	is_valid_argument(char *str);
+void save_numbers(char *str, t_dual_stack *stack);
 void	init(t_dual_stack *stack);
 void sa(t_dual_stack *stack);
 void sb(t_dual_stack *stack);

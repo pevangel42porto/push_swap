@@ -12,58 +12,43 @@
 
 #include "push_swap.h"
 
-void	save_numbers(char *str)
-{
-	int i;
-
-	i = 0;
-	while(str[i] != '\0')
-	{
-		while (str[i] != ' ')
-		{
-			if ()
-		}
-	}
-}
 
 int main(int argc, char **argv)
 {
 	t_dual_stack stack;
+
 	int i;
 	int j;
-
-	i = 0;
-	j = 0;
+	
 	if (argc >= 2)
 	{
-		// verificar se o argumento e um numero
-		i = 1;
-		while (i < argc)
+		if (argc > 2)// verificar se o argumento e um numero
 		{
-			is_valid_argument(argv[i]);
-			i++;
-		}
-		// verificar a duplicacao
-		i = 1;
-		while (i < argc)
-		{
-			j = i + 1;
-			while (j < argc)
+			i = 1;
+			while (i < argc)
 			{
-				if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
-				{
-					ft_printf("Error: Duplicate argument %d\n", ft_atoi(argv[i]));
-					return (0);
-				}
-				j++;
+				is_valid_argument(argv[i]);
+				i++;
 			}
-			i++;
-		}
-		init(&stack);
-		i = 1;
-		j = 0;
-		if (argc == 2)
-		{
+			// verificar a duplicacao
+			i = 1;
+			while (i < argc)
+			{
+				j = i + 1;
+				while (j < argc)
+				{
+					if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
+					{
+						ft_printf("Error: Duplicate argument %d\n", ft_atoi(argv[i]));
+						return (0);
+					}
+					j++;
+				}
+				i++;
+			}
+			init(&stack);
+			i = 1;
+			j = 0;
 			while (i < argc)
 			{
 				stack.stack_a[j] = ft_atoi(argv[i]);
@@ -75,7 +60,8 @@ int main(int argc, char **argv)
 		}
 		else
 		{
-			save_numbers(argv[1]);
+			init(&stack);	
+			save_numbers(argv[1], &stack);
 		}
 		ordenate(&stack);
 		print_stack_a(&stack);
