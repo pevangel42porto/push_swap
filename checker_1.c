@@ -6,11 +6,29 @@
 /*   By: pevaangel <pevaangel@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 17:31:43 by pevangel          #+#    #+#             */
-/*   Updated: 2024/04/25 16:08:14 by pevaangel        ###   ########.fr       */
+/*   Updated: 2024/04/25 20:01:38 by pevaangel        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	all_numbers(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if ((str[i] < '0' || str[i] > '9') && (str[i] != ' '))
+		{
+			ft_printf("Error: this character '%s' not valid!\n", &str[i]);
+			exit(0);
+			return (0);
+		}
+		i++;
+	}
+	return (1);
+}
 
 void save_numbers(char *str, t_dual_stack *stack)
 {   
@@ -61,6 +79,6 @@ void	is_valid_argument(char *str)
 	if (!(is_valid_integer(str)))
 	{
 		ft_printf("Error: Argument '%s' is not a valid number! \n", str);
-		return;
+		return ;
 	}
 }

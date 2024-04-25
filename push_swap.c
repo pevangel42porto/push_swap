@@ -61,7 +61,8 @@ int main(int argc, char **argv)
 		else
 		{
 			init(&stack);	
-			save_numbers(argv[1], &stack);
+			if (all_numbers(argv[1]))
+				save_numbers(argv[1], &stack);
 		}
 		ordenate(&stack);
 		print_stack_a(&stack);
