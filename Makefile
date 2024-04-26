@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pevangel <pevangel@student.42.fr>          +#+  +:+       +#+         #
+#    By: pevaangel <pevaangel@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/24 12:08:34 by pevangel          #+#    #+#              #
-#    Updated: 2024/04/24 17:42:11 by pevangel         ###   ########.fr        #
+#    Updated: 2024/04/26 15:01:13 by pevaangel        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ CFLAGS = -Wall -Wextra -Werror -g
 
 SRC_FILES = push_swap.c\
 		checker_1.c\
+		checker_2.c\
 		init.c\
 		functions.c\
 		operations.c\

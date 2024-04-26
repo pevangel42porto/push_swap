@@ -22,7 +22,7 @@ int main(int argc, char **argv)
 	
 	if (argc >= 2)
 	{
-		if (argc > 2)// verificar se o argumento e um numero
+		if (argc > 2)
 		{
 			i = 1;
 			while (i < argc)
@@ -58,10 +58,10 @@ int main(int argc, char **argv)
 			j--;
 			stack.a_top = j;
 		}
-		else
+		else if (argc == 2)
 		{
 			init(&stack);	
-			if (all_numbers(argv[1]))
+			if (all_numbers(argv[1]) && is_limit_integer(argv[1]))
 				save_numbers(argv[1], &stack);
 		}
 		ordenate(&stack);
@@ -70,7 +70,7 @@ int main(int argc, char **argv)
 	}
 	else
 	{
-		ft_printf("Error: ./push_swap <values> <values> .. \n");
+		ft_printf("Error: Acept 2 diferent types:\n./push_swap <values> <values>\n./push_swap ''1 2 3 4 5''\n");
 		return (0);
 	}
 	return (0);

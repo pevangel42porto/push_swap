@@ -6,7 +6,7 @@
 /*   By: pevaangel <pevaangel@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 16:30:27 by pevangel          #+#    #+#             */
-/*   Updated: 2024/04/25 19:56:35 by pevaangel        ###   ########.fr       */
+/*   Updated: 2024/04/26 18:29:09 by pevaangel        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct s_dual_stack
 void	is_valid_argument(char *str);
 int	all_numbers(char *str);
 void save_numbers(char *str, t_dual_stack *stack);
+int  is_limit_integer(char *str);
 void	init(t_dual_stack *stack);
 void sa(t_dual_stack *stack);
 void sb(t_dual_stack *stack);

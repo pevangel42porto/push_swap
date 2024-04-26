@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pevangel <pevangel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pevaangel <pevaangel@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 17:40:42 by pevangel          #+#    #+#             */
-/*   Updated: 2024/04/10 18:24:16 by pevangel         ###   ########.fr       */
+/*   Updated: 2024/04/26 16:12:35 by pevaangel        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@
 # endif
 
 int				ft_atoi(const char *str);
+long			ft_atol(const char *s);
 void			ft_bzero(void *s, size_t n);
 void			*ft_calloc(size_t count, size_t size);
 int				ft_isalnum(int c);

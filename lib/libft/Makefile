@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pevangel < pevangel@student.42porto.com    +#+  +:+       +#+         #
+#    By: pevaangel <pevaangel@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/11 11:14:10 by pevangel          #+#    #+#              #
-#    Updated: 2023/10/23 15:30:14 by pevangel         ###   ########.fr        #
+#    Updated: 2024/04/26 16:05:14 by pevaangel        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,7 @@ SRCS = ft_isalpha.c\
 		ft_memcmp.c\
 		ft_strnstr.c\
 		ft_atoi.c\
+		ft_atol.c\
 		ft_calloc.c\
 		ft_strdup.c\
 		ft_substr.c\
