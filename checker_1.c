@@ -6,11 +6,10 @@
 /*   By: pevaangel <pevaangel@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 17:31:43 by pevangel          #+#    #+#             */
-/*   Updated: 2024/04/26 16:32:15 by pevaangel        ###   ########.fr       */
+/*   Updated: 2024/04/26 18:35:59 by pevaangel        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <limits.h>
 #include "push_swap.h"
 
 static int is_valid_integer(char *str)
@@ -43,7 +42,7 @@ void is_valid_argument(char *str)
 		return;
     }
 
-    if (number < INT_MIN || number > INT_MAX)
+    if (number < -2147483648 || number > 2147483647)
     {
         ft_printf("Error: Argument '%s' is out of range for int! \n", str);
 		exit (0);
