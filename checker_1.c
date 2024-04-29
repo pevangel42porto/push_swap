@@ -1,13 +1,13 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   checker_1.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: pevaangel <pevaangel@student.42.fr>        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/24 17:31:43 by pevangel          #+#    #+#             */
-/*   Updated: 2024/04/26 18:35:59 by pevaangel        ###   ########.fr       */
-/*                                                                            */
+/*			*/
+/*		:::	  ::::::::   */
+/*   checker_1.c		:+:	  :+:	:+:   */
+/*			+:+ +:+		 +:+	 */
+/*   By: pevangel <pevangel@student.42.fr>		  +#+  +:+	   +#+		*/
+/*		+#+#+#+#+#+   +#+		   */
+/*   Created: 2024/04/24 17:31:43 by pevangel		  #+#	#+#			 */
+/*   Updated: 2024/04/29 17:09:49 by pevangel		 ###   ########.fr	   */
+/*			*/
 /* ************************************************************************** */
 
 #include "push_swap.h"
@@ -31,21 +31,21 @@ static int is_valid_integer(char *str)
 	}
 	return (1);
 }
+
 void is_valid_argument(char *str)
 {
 	long long number = ft_atol(str);
 	
-    if (!is_valid_integer(str))
-    {
-        ft_printf("Error: Argument '%s' is not a valid number! \n", str);
-		exit (0);
-		return;
-    }
+	if (!is_valid_integer(str))
+	{
+		write (2, "Error\n", 6);
+		exit (1);
+	}
 
-    if (number < -2147483648 || number > 2147483647)
-    {
-        ft_printf("Error: Argument '%s' is out of range for int! \n", str);
-		exit (0);
-        return;
-    }
+	if (number < -2147483648 || number > 2147483647)
+	{
+		write (2, "Error\n", 6);
+		exit (1);
+		return;
+	}
 }

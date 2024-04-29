@@ -1,13 +1,13 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   operations.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: pevaangel <pevaangel@student.42.fr>        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/24 14:25:09 by pevangel          #+#    #+#             */
-/*   Updated: 2024/04/26 12:35:23 by pevaangel        ###   ########.fr       */
-/*                                                                            */
+/*			*/
+/*		:::	  ::::::::   */
+/*   operations.c			   :+:	  :+:	:+:   */
+/*			+:+ +:+		 +:+	 */
+/*   By: pevangel <pevangel@student.42.fr>		  +#+  +:+	   +#+		*/
+/*		+#+#+#+#+#+   +#+		   */
+/*   Created: 2024/04/24 14:25:09 by pevangel		  #+#	#+#			 */
+/*   Updated: 2024/04/29 15:03:56 by pevangel		 ###   ########.fr	   */
+/*			*/
 /* ************************************************************************** */
 
 #include "push_swap.h"
@@ -18,6 +18,8 @@ int	max_num(t_dual_stack *stack)
 	int j;
 	int temp;
 
+	if (stack == NULL || stack->a_top < 0)
+		return (0);
 	temp = stack->stack_a[0];
 	i = 0;
 	while (i <= stack->a_top)
@@ -40,7 +42,11 @@ int min_num(t_dual_stack *stack)
 	int	i;
 	int	j;
 	int temp;
-
+	
+	if (stack == NULL || stack->a_top < 0)
+	{
+		return (0);
+	}
 	temp = stack->stack_a[0];
 	i = 0;
 	while (i <= stack->a_top)

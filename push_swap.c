@@ -39,7 +39,7 @@ int main(int argc, char **argv)
 				{
 					if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
 					{
-						ft_printf("Error: Duplicate argument %d\n", ft_atoi(argv[i]));
+						write (2, "Error\n", 6);
 						return (0);
 					}
 					j++;
@@ -60,18 +60,16 @@ int main(int argc, char **argv)
 		}
 		else if (argc == 2)
 		{
-			init(&stack);	
-			if (all_numbers(argv[1]) && is_limit_integer(argv[1]))
+			init(&stack);
+			if (all_numbers(argv[1], &stack) && is_limit_integer(argv[1], &stack) && duplicate(argv[1]))
 				save_numbers(argv[1], &stack);
 		}
 		ordenate(&stack);
 		print_stack_a(&stack);
 		print_stack_b(&stack);
+		cleanup(&stack);
 	}
 	else
-	{
-		ft_printf("Error: Acept 2 diferent types:\n./push_swap <values> <values>\n./push_swap ''1 2 3 4 5''\n");
 		return (0);
-	}
 	return (0);
 }
