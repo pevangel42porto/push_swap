@@ -6,7 +6,7 @@
 /*   By: pevangel <pevangel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 16:30:27 by pevangel          #+#    #+#             */
-/*   Updated: 2024/04/29 18:00:46 by pevangel         ###   ########.fr       */
+/*   Updated: 2024/04/29 18:31:11 by pevangel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	is_valid_argument(char *str);
 int		all_numbers(char *str, t_dual_stack *stack);
 void	save_numbers(char *str, t_dual_stack *stack);
 int		is_limit_integer(char *str, t_dual_stack *stack);
-int		duplicate(char *str);
+int		ft_duplicate(char *str);
 
 void	init(t_dual_stack *stack);
 void	sa(t_dual_stack *stack);

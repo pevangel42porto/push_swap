@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int duplicate(char *str)
+int ft_duplicate(char *str)
 {
 	int	i;
 	int j;
@@ -23,18 +23,15 @@ int duplicate(char *str)
 		j = i + 1;
 		while (str[j] != '\0')
 		{
-			if (str[i] == str[j])
-			{
-				write (2, "Error\n", 6);
-				exit (0);
+			if (str[i] == str[j] && str[i] != '\0')
 				return (0);
-			}
 			j++;
 		}
 		i++;
 	}
 	return (1);
 }
+
 
 int	all_numbers(char *str, t_dual_stack *stack)
 {
