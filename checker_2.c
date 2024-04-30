@@ -1,14 +1,15 @@
 /* ************************************************************************** */
-/*				*/
-/*					:::	  ::::::::   */
-/*   checker_2.c				:+:	  :+:	:+:   */
-/*				+:+ +:+		 +:+	 */
-/*   By: pevangel <pevangel@student.42.fr>		  +#+  +:+	   +#+		*/
-/*			+#+#+#+#+#+   +#+		   */
-/*   Created: 2024/04/26 15:00:45 by pevaangel		 #+#	#+#			 */
-/*   Updated: 2024/04/29 14:43:49 by pevangel		 ###   ########.fr	   */
-/*				*/
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker_2.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pevangel <pevangel@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/30 18:19:02 by pevangel          #+#    #+#             */
+/*   Updated: 2024/04/30 18:19:03 by pevangel         ###   ########.fr       */
+/*                                                                            */
 /* ************************************************************************** */
+
 
 #include "push_swap.h"
 
@@ -25,10 +26,7 @@ void ft_duplicate(char *str, t_dual_stack *stack)
 		{
 			if (str[i] == str[j] && str[i] != '\0')
 			{
-			write (2, "Error\n", 6);
-			cleanup(stack);
-			exit(0);
-			return;
+			print_error_and_exit(stack);
 			}
 			j++;
 		}
@@ -37,31 +35,7 @@ void ft_duplicate(char *str, t_dual_stack *stack)
 }
 
 
-int	all_numbers(char *str, t_dual_stack *stack)
-{
-	int i;
 
-	i = 0;
-	if (str[i] == '\0')
-	{
-		write(2, "Error\n", 6);
-		return (0);
-	}
-	while (str[i] != '\0')
-	{
-		if (str[i] == '-' && str[i - 1] == ' ' )
-			i++;
-		if ((str[i] < '0' || str[i] > '9') && (str[i] != ' '))
-		{
-			write (2, "Error\n", 6);
-			cleanup(stack);
-			exit(0);
-			return (0);
-		}
-		i++;
-	}
-	return (1);
-}
 
 void	free_split(char **substring)
 {

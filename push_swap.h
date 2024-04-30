@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pevaangel <pevaangel@student.42.fr>        +#+  +:+       +#+        */
+/*   By: pevangel <pevangel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 16:30:27 by pevangel          #+#    #+#             */
-/*   Updated: 2024/04/30 00:23:04 by pevaangel        ###   ########.fr       */
+/*   Updated: 2024/04/30 18:13:56 by pevangel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,8 @@ void	free_split(char **substring);
 void	ordenate(t_dual_stack *stack);
 void	print_stack_a(t_dual_stack *stack);
 void	print_stack_b(t_dual_stack *stack);
+
+void	print_error_and_exit(t_dual_stack *stack);
+int		ft_is_empty_sapce_notnumbers(char *str, t_dual_stack *stack);
+void	ft_two_spaces(char *str);
 #endif

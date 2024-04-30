@@ -1,17 +1,26 @@
 /* ************************************************************************** */
-/*			*/
-/*		:::	  ::::::::   */
-/*   push_swap.c			:+:	  :+:	:+:   */
-/*			+:+ +:	 +:+	 */
-/*   By: pevangel <pevangel@student.42.fr	  +#+  +:+	   +#	*/
-/*		+#+#+#+#+#+   +#	   */
-/*   Created: 2024/04/12 16:34:56 by pevange	  #+#	#+#		 */
-/*   Updated: 2024/04/16 13:17:40 by pevange	 ###   ########.fr	   */
-/*			*/
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pevangel <pevangel@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/30 18:18:21 by pevangel          #+#    #+#             */
+/*   Updated: 2024/04/30 18:24:32 by pevangel         ###   ########.fr       */
+/*                                                                            */
 /* ************************************************************************** */
+
 
 #include "push_swap.h"
 
+static void	ft_dup(int x, int y)
+{
+	if (x == y)
+	{	
+		write (2, "Error\n", 6);
+		exit (1);
+	}
+}
 
 int main(int argc, char **argv)
 {
@@ -30,18 +39,13 @@ int main(int argc, char **argv)
 				is_valid_argument(argv[i]);
 				i++;
 			}
-			// verificar a duplicacao
 			i = 1;
 			while (i < argc)
 			{
 				j = i + 1;
 				while (j < argc)
 				{
-					if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
-					{
-						write (2, "Error\n", 6);
-						return (0);
-					}
+					ft_dup(ft_atoi(argv[i]), ft_atoi(argv[j]));
 					j++;
 				}
 				i++;
@@ -60,8 +64,9 @@ int main(int argc, char **argv)
 		}
 		else if (argc == 2)
 		{
+			ft_two_spaces(argv[1]);
 			init(&stack);
-			if (all_numbers(argv[1], &stack) && is_limit_integer(argv[1], &stack))
+			if (ft_is_empty_sapce_notnumbers(argv[1], &stack) && is_limit_integer(argv[1], &stack))
 				save_numbers(argv[1], &stack);
 		}
 		ordenate(&stack);
