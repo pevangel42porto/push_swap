@@ -60,14 +60,9 @@ int main(int argc, char **argv)
 		}
 		else if (argc == 2)
 		{
-			if ((ft_duplicate(argv[1])))
-				ft_printf("sera\n");
 			init(&stack);
 			if (all_numbers(argv[1], &stack) && is_limit_integer(argv[1], &stack))
-			{
-				ft_printf("FODEEU");
 				save_numbers(argv[1], &stack);
-			}
 		}
 		ordenate(&stack);
 		print_stack_a(&stack);

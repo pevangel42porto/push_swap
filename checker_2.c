@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int ft_duplicate(char *str)
+void ft_duplicate(char *str, t_dual_stack *stack)
 {
 	int	i;
 	int j;
@@ -24,12 +24,16 @@ int ft_duplicate(char *str)
 		while (str[j] != '\0')
 		{
 			if (str[i] == str[j] && str[i] != '\0')
-				return (0);
+			{
+			write (2, "Error\n", 6);
+			cleanup(stack);
+			exit(0);
+			return;
+			}
 			j++;
 		}
 		i++;
 	}
-	return (1);
 }
 
 
@@ -77,19 +81,14 @@ int  is_limit_integer(char *str, t_dual_stack *stack)
 	{
 		write(2 , "Error\n", 6);
 		cleanup(stack);
-		exit (0);
 		return (0);
+		exit (0);
 	}
 	return(1);
 }
 
 
-static int  is_limit_int(char *str)
-{
-	if (ft_atol(str) < -2147483648 || ft_atol(str) > 2147483647)
-			return (0);
-		return (1);
-}
+
 void save_numbers(char *str, t_dual_stack *stack)
 {
 	char **substring = ft_split(str, ' ');
@@ -104,7 +103,7 @@ void save_numbers(char *str, t_dual_stack *stack)
 	}
 	i = 0;
 	while (substring[i] != NULL)
-		result = is_limit_int(substring[i++]);
+		result = is_limit_integer(substring[i++], stack);
 	if (result == 0)
 	{
 			write(2 , "Error\n", 6);
@@ -112,6 +111,8 @@ void save_numbers(char *str, t_dual_stack *stack)
 			free_split(substring);	
 			exit (0);
 	}
+	while(substring[i] != NULL)
+		ft_duplicate(substring[i++], stack);
 	i = 0;
 	while (substring[i] != NULL)
 	{
