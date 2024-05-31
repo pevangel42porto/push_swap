@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pevaangel <pevaangel@student.42.fr>        +#+  +:+       +#+        */
+/*   By: pevangel <pevangel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 19:22:43 by pevaangel         #+#    #+#             */
-/*   Updated: 2024/05/29 10:13:39 by pevaangel        ###   ########.fr       */
+/*   Updated: 2024/05/31 11:56:52 by pevangel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,18 @@ void	appendice_node(t_stack **stack, int nbr)
 		last_node->next = node;
 		node->prev = last_node;
 	}
+}
+int	stack_len(t_stack *stack)
+{
+	int	len;
+	
+	len = 0;
+	if (stack == NULL)
+		return (0);
+	while (stack)
+	{
+		len++;
+		stack = stack->next;
+	}
+	return(len);
 }

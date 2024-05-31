@@ -33,7 +33,7 @@ int main(int argc, char **argv)
     stack_b = NULL;
 	if (argc == 1 || (argc == 2 && argv[1][0] == '\0'))
 		return (1);
-   
+
     if (argc == 2)
         args = ft_split(argv[1], ' ');
     else
@@ -41,8 +41,15 @@ int main(int argc, char **argv)
 
     stack_init(&stack_a, args);
     if (!stack_sorted(stack_a))
-        sort_stack(&stack_a, &stack_b);
+    {
+		if (stack_len(stack_a) <= 3)
+		tiny_sort(&stack_a);
+		else
+			
+
+	}
     print_list(stack_a);
+	print_list(stack_b);
     
     free_stack(&stack_a);
 	return(0);	

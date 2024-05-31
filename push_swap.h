@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pevaangel <pevaangel@student.42.fr>        +#+  +:+       +#+        */
+/*   By: pevangel <pevangel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 16:30:27 by pevangel          #+#    #+#             */
-/*   Updated: 2024/05/29 16:41:57 by pevaangel        ###   ########.fr       */
+/*   Updated: 2024/05/31 12:38:36 by pevangel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,13 @@ bool	ft_not_duplicate(t_stack *stack_a, int nbr);
 void	error_free(t_stack **stack_a);
 void	free_stack(t_stack **stack);
 bool	stack_sorted(t_stack *stack);
-void	sort_stack(t_stack **stack_a, t_stack **stack_b);
 
+void	tiny_sort(t_stack **stack_a);
+void print_list(t_stack *head);
+int	stack_len(t_stack *stack);
+
+void pa(t_stack **stack_a, t_stack **stack_b);
+void pb(t_stack **stack_a, t_stack **stack_b);
 void sa(t_stack **stack);
 void sb(t_stack **stack);
 void ra(t_stack **stack);
