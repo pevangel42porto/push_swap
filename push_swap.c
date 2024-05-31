@@ -12,27 +12,38 @@
 
 #include "push_swap.h"
 
+void print_list(t_stack *head)
+{
+    t_stack *current = head;
+    while (current != NULL)
+    {
+        printf("%d ", current->value);
+        current = current->next;
+    }
+    printf("\n");
+}
 
 int main(int argc, char **argv)
 {
-	t_stack_node	*a;
-	t_stack_node	*b;
+	t_stack *stack_a;
+    t_stack *stack_b;
+    char    **args;
 
-	a = NULL;
-	b = NULL;
-	if (1 = argc || (2 == argc && !argv[1][0]))
-		return(1);
-	else if(2 == argc)
-		argv = ft_split(argv + 1, ' ');
-	stack_init(&a, argv + 1, 2 == argc);
-	if (!stack_sorted(a))
-	{
-		if (stack_len(a) == 2)
-			sa(&a, false);
-		else if(stack_len(a) == 3)
-			tiny_Sort(&a);
-		else
-			push_swap(&a, &b);
-	}
-	free_stack(&a);
+    stack_a = NULL;
+    stack_b = NULL;
+	if (argc == 1 || (argc == 2 && argv[1][0] == '\0'))
+		return (1);
+   
+    if (argc == 2)
+        args = ft_split(argv[1], ' ');
+    else
+        args = argv + 1;
+
+    stack_init(&stack_a, args);
+    if (!stack_sorted(stack_a))
+        sort_stack(&stack_a, &stack_b);
+    print_list(stack_a);
+    
+    free_stack(&stack_a);
+	return(0);	
 }

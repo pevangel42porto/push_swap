@@ -3,38 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pevangel <pevangel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pevaangel <pevaangel@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/19 11:10:39 by pevangel          #+#    #+#             */
-/*   Updated: 2024/05/19 11:36:25 by pevangel         ###   ########.fr       */
+/*   Created: 2024/05/29 09:50:49 by pevaangel         #+#    #+#             */
+/*   Updated: 2024/05/29 10:09:41 by pevaangel        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	error_syntax(char *str)
+void	free_stack(t_stack **stack)
 {
-	int	i;
+	t_stack	*tmp;
+	t_stack	*current;
 
-	i = 0;
-	if (!(str[i] == '+' || str[i] == '-' || (str[i] >= '0' && str[i] <= '9')))
-		return (0);
-	if ((str[i] == '+' || str[i] == '-') && !(str[i + 1] >= '0' && str[i + 1] <= '9'))
-		return (0);
-	while(str[++i])
+	if (stack == NULL)
+		return ;
+	current = *stack;
+	while (current)
 	{
-		if (!(str[i] >= '0' && str[i] <= '9'))
-			return (0);
+		tmp = current->next;
+		free(current);
+		current = tmp;
 	}
-	return(1);
+	*stack = NULL;
 }
-int	error_repetition(t_stack_node *a, int nbr)
+void	error_free(t_stack **a)
 {
-	while(a)
-	{
-		if (a->value == nbr)
-			return(0);
-		a = a->next;
-	}
-	return(1);
+	free_stack(a);
+	write(2, "Error\n", 6);
+	exit(1);
 }

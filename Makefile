@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pevangel <pevangel@student.42.fr>          +#+  +:+       +#+         #
+#    By: pevaangel <pevaangel@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/24 12:08:34 by pevangel          #+#    #+#              #
-#    Updated: 2024/05/19 11:10:17 by pevangel         ###   ########.fr        #
+#    Updated: 2024/05/29 16:36:41 by pevaangel        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,11 +19,13 @@ HEADERBONUS = bonus/push_swap_bonus.h
 CFLAGS = -Wall -Wextra -Werror -g
 
 SRC_FILES = push_swap.c\
-		init.c\
-		functions.c\
-		operations.c\
-		print_stacks.c\
-		error.c
+			init.c\
+			check_1.c\
+			error.c\
+			utils.c\
+			sort.c\
+			operations.c
+		
 		
 
 			

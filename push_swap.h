@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pevangel <pevangel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pevaangel <pevaangel@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 16:30:27 by pevangel          #+#    #+#             */
-/*   Updated: 2024/05/19 11:07:24 by pevangel         ###   ########.fr       */
+/*   Updated: 2024/05/29 16:41:57 by pevaangel        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,35 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+#include <limits.h>
 #include <stdbool.h>
 # include "lib/libft/libft.h"
 # include "lib/libft/ft_printf/ft_printf.h"
 
+# ifndef MAX_SIZE
+#  define MAX_SIZE 500
+# endif
 
-typedef struct s_stack_node
+typedef struct t_stack
 {
-	int	value;
-	
-	struct s_stack_node	*target_node;
-	struct s_stack_node	*next;
-	struct s_stack_node	*prev;
-}						t_stack_node;
+	int value;
+	struct t_stack	*prev;
+	struct t_stack	*next;
+}	t_stack;
 
+void	stack_init(t_stack **stack_a, char **argv);
+void	appendice_node(t_stack **stack, int nbr);
+bool 	ft_is_number(char *str);
+bool	ft_not_duplicate(t_stack *stack_a, int nbr);
+void	error_free(t_stack **stack_a);
+void	free_stack(t_stack **stack);
+bool	stack_sorted(t_stack *stack);
+void	sort_stack(t_stack **stack_a, t_stack **stack_b);
 
+void sa(t_stack **stack);
+void sb(t_stack **stack);
+void ra(t_stack **stack);
+void rb(t_stack **stack);
+void rra(t_stack **stack);
+void rrb(t_stack **stack);
 #endif
